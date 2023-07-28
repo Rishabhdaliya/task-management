@@ -1,17 +1,42 @@
 <app-add-task (addTaskEvent)="handleAddTask($event)"></app-add-task>
 
+<div class=" flex flex-wrap justify-center gap-4 mt-4">
+  <button
+    (click)="filterTasks('all')"
+    [class.active]="filterType === 'all'"
+    class="px-4 py-2 rounded bg-gray-200"
+  >
+    All
+  </button>
+  <button
+    (click)="filterTasks('completed')"
+    [class.active]="filterType === 'completed'"
+    class="px-4 py-2 rounded bg-green-200"
+  >
+    Completed
+  </button>
+  <button
+    (click)="filterTasks('incomplete')"
+    [class.active]="filterType === 'incomplete'"
+    class="px-4 py-2 rounded bg-red-200"
+  >
+    Incomplete
+  </button>
+</div>
 
-<span class="   flex flex-col gap-5  py-4">
-    <h2 class="text-3xl  text-center  font-medium text-white  mb-2">Task List</h2>
-    <ul class="space-y-2  mx-auto">
-      <li *ngFor="let task of tasks" class="flex text-xl items-center text-gray-700 space-x-2">
-        <input
+<span class="flex flex-col gap-5 py-4">
+  <h2 class="text-3xl text-center font-medium text-white mb-2">Task List</h2>
+  <ul class="space-y-2 mx-auto">
+    <!-- Use the correct *ngFor syntax and access each task using 'task' -->
+    <li *ngFor="let task of tasks" class="flex text-xl items-center text-gray-700 space-x-2">
+      <input
         type="checkbox"
-        [(ngModel)]="task.isCompleted"
-        class="form-checkbox h-6 w-6  rounded  "
+        [(ngModel)]="task.isCompleted"  
+        class="form-checkbox h-6 w-6 rounded"
       />
-              <span [ngClass]="{ 'line-through': task.isCompleted, 'text-gray-700': !task.isCompleted,  } ">{{ task.title }}</span>
-      </li>
-    </ul>
-  </span>
-  
+      <span [ngClass]="{ 'line-through': task.isCompleted, 'text-gray-700': !task.isCompleted }">
+        {{ task.title }} <!-- Access 'title' from individual 'task' -->
+      </span>
+    </li>
+  </ul>
+</span>
