@@ -1,0 +1,17 @@
+<app-add-task (addTaskEvent)="handleAddTask($event)"></app-add-task>
+
+
+<span class="   flex flex-col gap-5  py-4">
+    <h2 class="text-3xl  text-center  font-medium text-white  mb-2">Task List</h2>
+    <ul class="space-y-2  mx-auto">
+      <li *ngFor="let task of tasks" class="flex text-xl items-center text-gray-700 space-x-2">
+        <input
+        type="checkbox"
+        [(ngModel)]="task.isCompleted"
+        class="form-checkbox h-6 w-6  rounded  "
+      />
+              <span [ngClass]="{ 'line-through': task.isCompleted, 'text-gray-700': !task.isCompleted,  } ">{{ task.title }}</span>
+      </li>
+    </ul>
+  </span>
+  
