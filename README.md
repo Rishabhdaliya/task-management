@@ -1,4 +1,4 @@
-# Task Management Application in Angular
+# Task Management Application
 
 This project is a task management application built in Angular. The application allows users to add tasks, mark tasks as completed, and filter tasks based on their completion status. Below are the details on how to set up and use the application.
 
