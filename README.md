@@ -4,10 +4,10 @@ This project is a task management application built in Angular. The application 
 
 ## Getting Started
 
-### Prerequisites
+### Prerequisite
 
 Make sure you have the following software installed on your system:
-
+    
 - Node.js (https://nodejs.org)
 - Angular CLI (https://angular.io/cli)
 
